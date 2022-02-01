@@ -1,0 +1,1 @@
+The /src/routes/ folder is like a services folder, that calls the auth.js login API controller code and calls the homepage.js getArtworks API, consider renaming the routes folder to services

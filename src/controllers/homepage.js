@@ -21,6 +21,7 @@ const getArtworks = async (req, res = response) => {
             throw new Error('Bad response from AIC server');
         }
 
+        // TODO: does this need to await resp.json() if the resp line 10 is already using await?
         const { data = [] } = await resp.json(); // TODO: if the check above isn't waiting, is it possible to receive an error here?
         const dataWithUrls = data.map((image) => ({
             ...image,

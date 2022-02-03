@@ -11,7 +11,6 @@ const login = async (req, res = response) => {
         });
     }
 
-    // TODO: check why/where this gets returned, and where the status code goes
     res.json({
         name: 'Test User',
         token: 'A JWT token to keep the user loggin in',

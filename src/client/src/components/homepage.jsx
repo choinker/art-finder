@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
 import { searchArtworks } from '../api';
 
-function Homepage({ onLogout }) {
+const Homepage = ({ onLogout }) => {
     const [keyword, setKeyword] = useState("");
     const [artworks, setArtworks] = useState([]);
     const [isLoading, setIsLoading] = useState(false);

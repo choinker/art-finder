@@ -17,6 +17,7 @@ class Server {
 
     middlewares() {
         this.app.use(cors()); // Enable CORS
+        this.app.use(express.json());
     }
 
     // Bind controllers to routes

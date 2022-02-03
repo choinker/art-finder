@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import Login from './components/login';
+import Login from './components/login';
 import Homepage from './components/homepage';
 
 function App() {
@@ -24,10 +24,8 @@ function App() {
     };
 
     return (
-        // (isUserSignedIn && <div>Hey there</div>) ||
-        // (<div>user not signed in</div>)
-        <Homepage />
-        
+        (isUserSignedIn && <Homepage />) ||
+        (<Login onLoginSuccessful={setIsUserSignedIn} />)
     );
 }
 

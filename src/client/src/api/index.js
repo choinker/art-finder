@@ -1,5 +1,3 @@
-import fetch from "cross-fetch";
-
 // TODO: refactor these to export const x = async (...) => { }
 export async function login({ email, password }) {
     try {

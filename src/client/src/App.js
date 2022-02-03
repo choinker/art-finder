@@ -24,8 +24,8 @@ function App() {
     };
 
     return (
-        (isUserSignedIn && <Homepage />) ||
-        (<Login onLoginSuccessful={setIsUserSignedIn} />)
+        (isUserSignedIn && <Homepage onLogout={onLogout} />) ||
+        (<Login onLoginSuccessful={onLoginSuccessful} />)
     );
 }
 

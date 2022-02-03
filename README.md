@@ -20,6 +20,13 @@ POST http://localhost:8080/api/auth/login
 BONUS FEATURES
 Be able to heart/save artwork, and view your collection of favorite art, download? order prints? share with friends?
 
+On homepage render the most favorited artworks by users
+
+On homepage let user toggle dark/light mode, select background color (lavender, lavenderblush) and select card background colors
+
+ENHANCEMENTS
+Card rows (groups?) instead of card columns to grow cards along a row instead of a column, prevents uneven columns towards bottom of searches
+
 ` 
 {userViewed ? (
     <CheckmarkImg>

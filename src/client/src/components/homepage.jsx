@@ -62,7 +62,7 @@ function Homepage({ onLogout }) {
                 </Form>
             </Row>
             {isLoading && (
-                <Row>
+                <Row className='justify-content-center mb-5' >
                     <Spinner animation='border' variant='primary' />
                 </Row>
             )}

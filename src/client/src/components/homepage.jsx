@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Form, Button, InputGroup, Spinner, CardGroup, Card, Alert } from 'react-bootstrap';
+import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
 import { searchArtworks } from '../api';
 
 function Homepage({ onLogout }) {
@@ -25,7 +25,7 @@ function Homepage({ onLogout }) {
     // TODO: Add the input group prepend
     return (
         <Container fluid>
-            <Row>
+            <Row className='mt-2 mb-2 justify-content-end'>
                 <Button variant='outline-danger' onClick={onLogout}>
                     Log out
                 </Button>
@@ -68,8 +68,8 @@ function Homepage({ onLogout }) {
                 <Alert variant='info'>
                     No results were found for the entered keyword(s).
                 </Alert>
-            ) : (
-                <CardGroup>
+            ) : ( // TODO: column-size: 3, fix the css for cards too
+                <CardColumns>
                     {artworks.map((artwork, idx) => {
                         const {
                             id,
@@ -81,7 +81,7 @@ function Homepage({ onLogout }) {
                             place_of_origin,
                         } = artwork;
                         return (
-                            <Card key={`artwork-${id}`}>
+                            <Card key={`artwork-${id}` }>
                                 <a
                                     href={image_url}
                                     target='_blank'
@@ -107,7 +107,7 @@ function Homepage({ onLogout }) {
                             </Card>
                         );
                     })}
-                </CardGroup>
+                </CardColumns>
             )}
         </Container>
     );

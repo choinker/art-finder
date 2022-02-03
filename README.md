@@ -15,3 +15,17 @@ and hit the browser to
 
 GET http://localhost:8080/api/homepage/getartworks/monet
 POST http://localhost:8080/api/auth/login
+
+
+BONUS FEATURES
+Be able to heart/save artwork, and view your collection of favorite art, download? order prints? share with friends?
+
+` 
+{userViewed ? (
+    <CheckmarkImg>
+) : (
+    <CelebrationImg
+        style={{ width: 'auto', height: '100%' }}
+    >
+)}
+`

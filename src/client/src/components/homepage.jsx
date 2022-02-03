@@ -25,7 +25,7 @@ function Homepage({ onLogout }) {
     // TODO: Add the input group prepend
     return (
         <Container fluid>
-            <Row className='mt-2 mb-2 justify-content-end'>
+            <Row className='mt-2 mb-2 justify-content-end' noGutters>
                 <Button variant='outline-danger' onClick={onLogout}>
                     Log out
                 </Button>
@@ -35,7 +35,7 @@ function Homepage({ onLogout }) {
                     Welcome to Art-Finder!
                 </h1>
             </Row>
-            <Row className='mt-2'>
+            <Row className='mt-2' noGutters>
                 <h4>
                     Enter one or multiple keywords below to search for artwork in the Art Institute of Chicago.
                 </h4>
@@ -49,13 +49,15 @@ function Homepage({ onLogout }) {
                             onChange={onChangeKeyword}
                             value={keyword}
                         />
-                        <Button
-                            variant='outline-primary'
-                            disabled={!keyword}
-                            type='submit'
-                        >
-                            Search artworks
+                        <InputGroup.Prepend>
+                            <Button
+                                variant='outline-primary'
+                                disabled={!keyword}
+                                type='submit'
+                            >
+                                Search artworks
                         </Button>
+                        </InputGroup.Prepend>
                     </InputGroup>
                 </Form>
             </Row>
@@ -69,6 +71,7 @@ function Homepage({ onLogout }) {
                     No results were found for the entered keyword(s).
                 </Alert>
             ) : ( // TODO: column-size: 3, fix the css for cards too
+                // className="col-sm-4" <= adding this to the card makes it a nice small size
                 <CardColumns>
                     {artworks.map((artwork, idx) => {
                         const {
@@ -81,7 +84,7 @@ function Homepage({ onLogout }) {
                             place_of_origin,
                         } = artwork;
                         return (
-                            <Card key={`artwork-${id}` }>
+                            <Card key={`artwork-${id}`} >
                                 <a
                                     href={image_url}
                                     target='_blank'
@@ -98,10 +101,10 @@ function Homepage({ onLogout }) {
                                     >
                                         {place_of_origin}, {date_display}
                                         <br />
-                                        <small className='text-muted'> {artist_display} </small>
-                                        <Card.Text>
-                                            <small className='text-muted'> {medium_display} </small>
-                                        </Card.Text>
+                                        <small className='text-muted'> {artist_display} </small> 
+                                    </Card.Text>
+                                    <Card.Text>
+                                        <small className='text-muted'> {medium_display} </small>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

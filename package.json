@@ -1,6 +1,10 @@
 {
   "name": "art-finder",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.x",
+    "npm": "8.x"
+  },
   "description": "Use Art Insitute of Chicago API to render artwork for users",
   "main": "src/app.js",
   "scripts": {

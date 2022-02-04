@@ -33,6 +33,10 @@ Pagination for art, so you can scroll through more pages
 
 Massive headache with deploying to Heroku, the 'build' script that is run always said 'react-scripts' dependency not found, so it was trying to build the react-app /client/ using deps from the top level package.json, added a postheroku build script that cds into the client folder before building
 
+Discover page, to show random pieces of art to user, to thumbs up, thumbs down, or save, start randomly then start to display ones we predict user will like
+
+Personalized page for users favorites, and let them select genres that they like
+
 BUGS
 
 Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc 

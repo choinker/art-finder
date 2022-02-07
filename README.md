@@ -39,9 +39,16 @@ Personalized page for users favorites, and let them select genres that they like
 
 BUGS
 
-Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc 
+Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc P1
 
 Only discovered info on why the site shut down from running `heroku logs` in console, try find a way to get better logging / analytics for free
+
+TROUBLESHOOTING HEROKU
+https://devcenter.heroku.com/articles/application-offline 
+
+heroku ps <= current status
+heroku scale web=1 <= wakes up an idle'd app
+
 
 ` 
 {userViewed ? (

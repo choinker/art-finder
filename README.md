@@ -37,6 +37,10 @@ Discover page, to show random pieces of art to user, to thumbs up, thumbs down, 
 
 Personalized page for users favorites, and let them select genres that they like
 
+Add an intercom thing like Lofty.ai to msg founder
+
+Add a navbar to go between home, favorites, settings, logout, etc
+
 BUGS
 
 Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc P1

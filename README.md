@@ -43,6 +43,8 @@ Add a navbar to go between home, favorites, settings, logout, etc
 
 Authentication using password package, using JWT instead of sessions
 
+Switch over to Semantic UI
+
 BUGS
 
 Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc P1

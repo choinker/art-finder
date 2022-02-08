@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
 import { searchArtworks } from '../api';
+import ArtCard from './ArtCard';
 
 const Homepage = ({ onLogout }) => {
     const [keyword, setKeyword] = useState("");
@@ -25,12 +26,12 @@ const Homepage = ({ onLogout }) => {
     // TODO: Add the input group prepend
     return (
         <Container fluid>
-            <Row className='mt-2 mb-2 justify-content-end' noGutters>
+            <Row className='mt-2 mb-2 justify-content-end'>
                 <Button variant='outline-danger' onClick={onLogout}>
                     Log out
                 </Button>
             </Row>
-            <Row>
+            <Row className='justify-content-center' noGutters>
                 <h1>
                     Welcome to Art-Finder!
                 </h1>
@@ -70,8 +71,7 @@ const Homepage = ({ onLogout }) => {
                 <Alert variant='info'>
                     No results were found for the entered keyword(s).
                 </Alert>
-            ) : ( // TODO: column-size: 3, fix the css for cards too
-                // className="col-sm-4" <= adding this to the card makes it a nice small size
+            ) : (
                 <CardColumns>
                     {artworks.map((artwork, idx) => {
                         const {
@@ -83,8 +83,21 @@ const Homepage = ({ onLogout }) => {
                             medium_display,
                             place_of_origin,
                         } = artwork;
+                        console.log('andrew homepage artwork: ', artwork);
                         return (
-                            <Card key={`artwork-${id}`} >
+                            <ArtCard artwork={artwork} />
+                        );
+                    })}
+                </CardColumns>
+            )}
+        </Container>
+    );
+}
+
+export default Homepage;
+
+/*
+<Card key={`artwork-${id}`} >
                                 <a
                                     href={image_url}
                                     target='_blank'
@@ -95,25 +108,28 @@ const Homepage = ({ onLogout }) => {
                                 </a>
                                 <Card.Body>
                                     <Card.Title>{title}</Card.Title>
-                                    <Card.Text
-                                        className='text-muted'
-                                        style={{ whiteSpace: 'pre-line'}}
-                                    >
-                                        {place_of_origin}, {date_display}
-                                        <br />
-                                        <small className='text-muted'> {artist_display} </small> 
-                                    </Card.Text>
+                                    <div>
+                                        <Card.Text
+                                            className='text-muted'
+                                            style={{ whiteSpace: 'pre-line'}}
+                                        >
+                                            {place_of_origin}, {date_display}
+                                            <br />
+                                            <small className='text-muted'> {artist_display} </small> 
+                                        </Card.Text>
+                                        <div styles={{
+                                            display: 'flex',
+                                            width: '100%',
+                                            'justify-content': 'right',
+                                        }}>
+                                            Heart button
+                                        </div>
+
+                                    </div>
+                                    
                                     <Card.Text>
                                         <small className='text-muted'> {medium_display} </small>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
-                        );
-                    })}
-                </CardColumns>
-            )}
-        </Container>
-    );
-}
-
-export default Homepage;
+*/

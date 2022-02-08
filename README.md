@@ -18,13 +18,13 @@ POST http://localhost:8080/api/auth/login
 
 
 BONUS FEATURES
-Be able to heart/save artwork, and view your collection of favorite art, download? order prints? share with friends?
+Be able to heart/save artwork, and view your collection of favorite art, download? order prints? share with friends? - Heart and Share link beside each art card
 
 On homepage render the most favorited artworks by users
 
 On homepage let user toggle dark/light mode, select background color (lavender, lavenderblush) and select card background colors
 
-Authentication with real account (link the accounts to the Book version, Movie version? some kind of favorite media organizer)
+Authentication with real account (link the accounts to the Book version, Movie version? some kind of favorite multi-media organizer/tracker)
 
 ENHANCEMENTS
 Card rows (groups?) instead of card columns to grow cards along a row instead of a column, prevents uneven columns towards bottom of searches
@@ -40,6 +40,8 @@ Personalized page for users favorites, and let them select genres that they like
 Add an intercom thing like Lofty.ai to msg founder
 
 Add a navbar to go between home, favorites, settings, logout, etc
+
+Authentication using password package, using JWT instead of sessions
 
 BUGS
 

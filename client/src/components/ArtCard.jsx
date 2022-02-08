@@ -14,9 +14,6 @@ const ArtCard = ({artwork}) => {
         place_of_origin,
     } = artwork;
 
-    debugger;
-    console.log('andrew artwork id: ', id);
-
     return (
         <Card key={`artwork-${id}`} >
             <a
@@ -29,17 +26,18 @@ const ArtCard = ({artwork}) => {
             </a>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
-                <div styles={{display: 'flex'}}>
+                <div style={{display: 'flex'}}>
                     <Card.Text
                         className='text-muted'
-                        style={{ whiteSpace: 'pre-line'}}
+                        style={{ width: '75%', whiteSpace: 'pre-line'}}
                     >
                         {place_of_origin}, {date_display}
                         <br />
                         <small className='text-muted'> {artist_display} </small> 
                     </Card.Text>
-                    <div styles={{display: 'flex', width: '100%', 'justify-content': 'end'}}>
+                    <div style={{display: 'flex', width: '25%', 'justify-content': 'end'}}>
                         Heart button
+                        Share button
                     </div>
 
                 </div>

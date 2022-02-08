@@ -83,7 +83,6 @@ const Homepage = ({ onLogout }) => {
                             medium_display,
                             place_of_origin,
                         } = artwork;
-                        console.log('andrew homepage artwork: ', artwork);
                         return (
                             <ArtCard artwork={artwork} />
                         );

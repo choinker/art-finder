@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
-
+import '../App.css';
 
 const ArtCard = ({artwork}) => {
 
@@ -14,6 +14,8 @@ const ArtCard = ({artwork}) => {
         place_of_origin,
     } = artwork;
 
+    // TODO: consider if I want to use the className='image-container' 
+    // to make the whole card, or just the image scale up a bit for an interactive feel
     return (
         <Card key={`artwork-${id}`} >
             <a
@@ -22,7 +24,7 @@ const ArtCard = ({artwork}) => {
                 rel='noreferrer'
                 aria-current='true'
             >
-                <Card.Img variant='top' src={image_url} />
+                <Card.Img className='image-container' variant='top' src={image_url} />
             </a>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>

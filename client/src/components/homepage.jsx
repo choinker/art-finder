@@ -24,7 +24,7 @@ const Homepage = ({ onLogout }) => {
         setIsLoading(false);
     };
 
-    // TODO: Break this down into more components
+    // TODO: Break this down into more components, TopNav (includes buttons), Home, Favorites
     return (
         <Container fluid>
             <Row className='mt-2 mb-2 justify-content-end'>

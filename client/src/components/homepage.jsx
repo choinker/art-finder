@@ -28,7 +28,7 @@ const Homepage = ({ onLogout }) => {
     return (
         <Container fluid>
             <Row className='mt-2 mb-2 justify-content-end'>
-                { scene === 'home' ? (
+                {scene === 'home' ? (
                     <Button onClick={() => {setScene('favorites')}}>
                         Favorites
                     </Button>
@@ -36,22 +36,18 @@ const Homepage = ({ onLogout }) => {
                     <Button onClick={() => {setScene('home')}}>
                         Home
                     </Button>
-                )
-                    
-
-                }
+                )}
                 <Button variant='outline-danger' onClick={onLogout}>
                     Log out
                 </Button>
             </Row>
-            
+            <Row className='justify-content-center' noGutters>
+                <h1>
+                    Welcome to Art-Finder!
+                </h1>
+            </Row>
             {scene === 'home' && (
                 <div>
-                    <Row className='justify-content-center' noGutters>
-                        <h1>
-                            Welcome to Art-Finder!
-                        </h1>
-                    </Row>
                     <Row className='mt-2' noGutters>
                         <h4>
                             Enter one or multiple keywords below to search for artwork in the Art Institute of Chicago.

@@ -32,7 +32,7 @@ const Login = ({ onLoginSuccessful }) => {
 
     // return JSX
     return (
-        <Container>
+        <Container className='mt-5'>
             <Card>
                 <Card.Header as='h1'>
                     Login
@@ -50,7 +50,7 @@ const Login = ({ onLoginSuccessful }) => {
                                 value={email}
                             />
                             <Form.Text className='text-muted'>
-                                We'll never share your email with anyone else.
+                                (Input a valid email and password '1234' to access, auth is currently mocked)
                             </Form.Text>
                         </Form.Group>
 

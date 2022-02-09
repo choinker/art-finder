@@ -3,7 +3,7 @@ import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, A
 import ArtCards from './ArtCards';
 
 const Favorites = (props) => {
-    const { artworks } = props;
+    const { artworks, handleRemoveFavorite } = props;
     return (
         <>
             <Row className='mt-2' noGutters>
@@ -13,7 +13,7 @@ const Favorites = (props) => {
             </Row>
             {artworks.length > 0 ? 
             (
-                <ArtCards artworks={artworks} handleAddFavorite={() => {console.log('fav a flav')}} />
+                <ArtCards artworks={artworks} handleAddFavorite={handleRemoveFavorite} />
             ) : 
             (
                 <Alert variant='info'>

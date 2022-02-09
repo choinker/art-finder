@@ -32,6 +32,13 @@ const Homepage = ({ onLogout }) => {
         console.log('andrew favs: ', favorites);
     }
 
+    const removeFavoriteArtwork = (artwork) => {
+        const newFavorites = favorites.filter(
+            (favorite) => favorite.id != artwork.id
+        );
+        setFavorites(newFavorites);
+    }
+
     const printState = useEffect(() => {
         console.log('andrew state of artworks: ', artworks);
         console.log('andrew state of favorites: ', favorites);
@@ -106,7 +113,10 @@ const Homepage = ({ onLogout }) => {
                 </div>
             )}
             {scene === 'favorites' && (
-                <Favorites artworks={favorites} />
+                <Favorites 
+                    artworks={favorites} 
+                    handleRemoveFavorite={removeFavoriteArtwork}
+                />
             )}
             
         </Container>

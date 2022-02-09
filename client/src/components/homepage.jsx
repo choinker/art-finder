@@ -26,9 +26,9 @@ const Homepage = ({ onLogout }) => {
         setIsLoading(false);
     };
 
-    const addFavoriteMovie = (movie) => {
+    const addFavoriteArtwork = (artwork) => {
         // TODO: add check for if art is already in list, to not add it
-        setFavorites([...favorites, movie]);
+        setFavorites([...favorites, artwork]);
         console.log('andrew favs: ', favorites);
     }
 
@@ -100,7 +100,7 @@ const Homepage = ({ onLogout }) => {
                     ) : (
                         <ArtCards 
                             artworks={artworks} 
-                            handleAddFavorite={addFavoriteMovie} 
+                            handleAddFavorite={addFavoriteArtwork} 
                         />
                     )}
                 </div>

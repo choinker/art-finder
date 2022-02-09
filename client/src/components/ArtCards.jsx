@@ -57,10 +57,7 @@ const ArtCards = (props) => {
                 )
             })}
         </CardColumns>
-
-    );
-    
-        
+    );  
 };
 
 export default ArtCards;

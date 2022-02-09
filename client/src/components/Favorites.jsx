@@ -4,7 +4,6 @@ import ArtCards from './ArtCards';
 
 const Favorites = (props) => {
     const { artworks } = props;
-    console.log('andrew favs artworks object: ', artworks, 'length: ', artworks.length);
     return (
         <>
             <Row className='mt-2' noGutters>
@@ -21,7 +20,6 @@ const Favorites = (props) => {
                     You have not saved any favorites yet, click 'Home' and find something you like!
                 </Alert>
             )}
-        
         </>
     );
 };

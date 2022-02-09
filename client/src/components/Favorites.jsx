@@ -13,7 +13,11 @@ const Favorites = (props) => {
             </Row>
             {artworks.length > 0 ? 
             (
-                <ArtCards artworks={artworks} handleAddFavorite={handleRemoveFavorite} />
+                <ArtCards 
+                    artworks={artworks} 
+                    handleAddFavorite={handleRemoveFavorite}
+                    isFavorites
+                />
             ) : 
             (
                 <Alert variant='info'>

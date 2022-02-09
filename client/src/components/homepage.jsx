@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
 import { searchArtworks } from '../api';
-import ArtCard from './ArtCards';
+import ArtCards from './ArtCards';
+import Favorites from './Favorites';
 
 const Homepage = ({ onLogout }) => {
     const [keyword, setKeyword] = useState("");
@@ -29,6 +30,12 @@ const Homepage = ({ onLogout }) => {
         setFavorites([...favorites, movie]);
         console.log('andrew favs: ', favorites);
     }
+
+    const printState = useEffect(() => {
+        console.log('andrew state of artworks: ', artworks);
+        console.log('andrew state of favorites: ', favorites);
+
+    }, [artworks, favorites])
 
     // TODO: Break this down into more components, TopNav (includes buttons), Home, Favorites
     return (
@@ -90,17 +97,15 @@ const Homepage = ({ onLogout }) => {
                             No results were found for the entered keyword(s).
                         </Alert>
                     ) : (
-                        <CardColumns>
-                            <ArtCard artworks={artworks} handleAddFavorite={addFavoriteMovie} />
-                        </CardColumns>
+                        <ArtCards 
+                            artworks={artworks} 
+                            handleAddFavorite={addFavoriteMovie} 
+                        />
                     )}
                 </div>
             )}
             {scene === 'favorites' && (
-                <div>
-                    Favorites
-
-                </div>
+                <Favorites artworks={favorites} />
             )}
             
         </Container>

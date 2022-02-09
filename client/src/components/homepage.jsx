@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
 import { searchArtworks } from '../api';
-import ArtCard from './ArtCard';
+import ArtCard from './ArtCards';
 
 const Homepage = ({ onLogout }) => {
     const [keyword, setKeyword] = useState("");
@@ -9,6 +9,7 @@ const Homepage = ({ onLogout }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [noArtworksFound, setNoArtworksFound] = useState(false);
     const [scene, setScene] = useState("home");
+    const [favorites, setFavorites] = useState([]);
 
     const onChangeKeyword = (event) => {
         setKeyword(event.target.value);
@@ -23,6 +24,11 @@ const Homepage = ({ onLogout }) => {
         setNoArtworksFound(!artworks || !artworks.length)
         setIsLoading(false);
     };
+
+    const addFavoriteMovie = (movie) => {
+        setFavorites([...favorites, movie]);
+        console.log('andrew favs: ', favorites);
+    }
 
     // TODO: Break this down into more components, TopNav (includes buttons), Home, Favorites
     return (
@@ -85,26 +91,16 @@ const Homepage = ({ onLogout }) => {
                         </Alert>
                     ) : (
                         <CardColumns>
-                            {artworks.map((artwork, idx) => {
-                                const {
-                                    id,
-                                    title,
-                                    image_url,
-                                    artist_display,
-                                    date_display,
-                                    medium_display,
-                                    place_of_origin,
-                                } = artwork;
-                                return (
-                                    <ArtCard artwork={artwork} />
-                                );
-                            })}
+                            <ArtCard artworks={artworks} handleAddFavorite={addFavoriteMovie} />
                         </CardColumns>
                     )}
                 </div>
             )}
             {scene === 'favorites' && (
-                <div>Favorites</div>
+                <div>
+                    Favorites
+
+                </div>
             )}
             
         </Container>

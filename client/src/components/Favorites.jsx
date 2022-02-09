@@ -4,6 +4,7 @@ import ArtCards from './ArtCards';
 
 const Favorites = (props) => {
     const { artworks } = props;
+    console.log('andrew favs artworks object: ', artworks, 'length: ', artworks.length);
     return (
         <>
             <Row className='mt-2' noGutters>
@@ -11,12 +12,14 @@ const Favorites = (props) => {
                     Here you can view, remove, or share your favorites
                 </h4>
             </Row>
-            {artworks ? 
+            {artworks.length > 0 ? 
             (
                 <ArtCards artworks={artworks} handleAddFavorite={() => {console.log('fav a flav')}} />
             ) : 
             (
-                <div> NO FAVORITES </div>
+                <Alert variant='info'>
+                    You have not saved any favorites yet, click 'Home' and find something you like!
+                </Alert>
             )}
         
         </>

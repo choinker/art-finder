@@ -27,6 +27,7 @@ const Homepage = ({ onLogout }) => {
     };
 
     const addFavoriteMovie = (movie) => {
+        // TODO: add check for if art is already in list, to not add it
         setFavorites([...favorites, movie]);
         console.log('andrew favs: ', favorites);
     }

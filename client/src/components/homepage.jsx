@@ -26,10 +26,20 @@ const Homepage = ({ onLogout }) => {
         setIsLoading(false);
     };
 
+    useEffect(() => {
+        const savedFavorites = JSON.parse(localStorage.getItem('favorite-artworks'));
+    })
+
+    const saveToLocalStorage = (items) => {
+        localStorage.setItems('favorite-artworks', JSON.stringify(favorites));
+    };
+
     const addFavoriteArtwork = (artwork) => {
         // TODO: add check for if art is already in list, to not add it
-        setFavorites([...favorites, artwork]);
-        console.log('andrew favs: ', favorites);
+        const newFavorites = [...favorites, artwork];
+        setFavorites(newFavorites);
+        saveToLocalStorage(newFavorites)
+        console.log('andrew favs: ', newFavorites);
     }
 
     const removeFavoriteArtwork = (artwork) => {
@@ -37,6 +47,7 @@ const Homepage = ({ onLogout }) => {
             (favorite) => favorite.id != artwork.id
         );
         setFavorites(newFavorites);
+        saveToLocalStorage(newFavorites);
     }
 
     const printState = useEffect(() => {

@@ -30,7 +30,7 @@ const Homepage = ({ onLogout }) => {
         const savedFavorites = JSON.parse(localStorage.getItem('favorite-artworks'));
         console.log('andrew savedFavs: ', savedFavorites);
         if (savedFavorites) setFavorites(savedFavorites);
-    });
+    }, []);
 
     const saveToLocalStorage = (items) => {
         localStorage.setItem('favorite-artworks', JSON.stringify(favorites));

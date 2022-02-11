@@ -33,7 +33,7 @@ const Homepage = ({ onLogout }) => {
     });
 
     const saveToLocalStorage = (items) => {
-        localStorage.setItems('favorite-artworks', JSON.stringify(favorites));
+        localStorage.setItem('favorite-artworks', JSON.stringify(favorites));
     };
 
     const addFavoriteArtwork = (artwork) => {

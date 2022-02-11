@@ -28,7 +28,9 @@ const Homepage = ({ onLogout }) => {
 
     useEffect(() => {
         const savedFavorites = JSON.parse(localStorage.getItem('favorite-artworks'));
-    })
+        console.log('andrew savedFavs: ', savedFavorites);
+        if (savedFavorites) setFavorites(savedFavorites);
+    });
 
     const saveToLocalStorage = (items) => {
         localStorage.setItems('favorite-artworks', JSON.stringify(favorites));
@@ -36,6 +38,7 @@ const Homepage = ({ onLogout }) => {
 
     const addFavoriteArtwork = (artwork) => {
         // TODO: add check for if art is already in list, to not add it
+        debugger;
         const newFavorites = [...favorites, artwork];
         setFavorites(newFavorites);
         saveToLocalStorage(newFavorites)

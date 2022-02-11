@@ -4,6 +4,7 @@ import ArtCards from './ArtCards';
 
 const Favorites = (props) => {
     const { artworks, handleRemoveFavorite } = props;
+    // Add a null check for artworks
     return (
         <>
             <Row className='mt-2' noGutters>

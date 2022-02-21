@@ -33,22 +33,27 @@ const Homepage = ({ onLogout }) => {
     }, []);
 
     const saveToLocalStorage = (items) => {
+        debugger;
         localStorage.setItem('favorite-artworks', JSON.stringify(favorites));
     };
 
     const addFavoriteArtwork = (artwork) => {
         // TODO: add check for if art is already in list, to not add it
         debugger;
-        const newFavorites = [...favorites, artwork];
-        setFavorites(newFavorites);
-        saveToLocalStorage(newFavorites)
-        console.log('andrew favs: ', newFavorites);
+        const duplicate = favorites.some(art => art.id === artwork.id);
+        if (!duplicate) {
+            const newFavorites = [...favorites, artwork];
+            setFavorites(newFavorites);
+            saveToLocalStorage(newFavorites);
+            console.log('andrew new favs: ', newFavorites);
+        }
     }
 
     const removeFavoriteArtwork = (artwork) => {
         const newFavorites = favorites.filter(
             (favorite) => favorite.id != artwork.id
         );
+        debugger;
         setFavorites(newFavorites);
         saveToLocalStorage(newFavorites);
     }

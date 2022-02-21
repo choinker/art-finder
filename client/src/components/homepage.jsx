@@ -48,7 +48,7 @@ const Homepage = ({ onLogout }) => {
 
     const removeFavoriteArtwork = (artwork) => {
         const newFavorites = favorites.filter(
-            (favorite) => favorite.id != artwork.id
+            (favorite) => favorite.id !== artwork.id
         );
         setFavorites(newFavorites);
         saveToLocalStorage(newFavorites);

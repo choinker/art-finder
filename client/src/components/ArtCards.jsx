@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Form, Button, InputGroup, Spinner, CardColumns, Card, Alert } from 'react-bootstrap';
+import { Button, CardColumns, Card } from 'react-bootstrap';
 import '../App.css';
 
 const ArtCards = (props) => {

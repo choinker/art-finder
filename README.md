@@ -16,6 +16,7 @@ and hit the browser to
 GET http://localhost:8080/api/homepage/getartworks/monet
 POST http://localhost:8080/api/auth/login
 
+The public API used to get art data for this application is provide by the Art Institute of Chicago - https://github.com/art-institute-of-chicago/data-aggregator
 
 BONUS FEATURES
 Be able to heart/save artwork, and view your collection of favorite art, download? order prints? share with friends? - Heart and Share link beside each art card

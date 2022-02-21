@@ -46,11 +46,13 @@ Authentication using password package, using JWT instead of sessions
 
 Switch over to Semantic UI
 
-BUGS
 
-Prevent multiple additions of same artwork to favorites
 
-Removing a favorite doesnt remove it from local storage
+
+HEROKU 
+
+Push updates to heroku / deploy
+
 
 Heroku apps restart if they 'idle' for 30 mins? https://dev.to/unorthodev/prevent-your-app-from-idling-on-heroku-2lmc P1
 
